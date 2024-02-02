@@ -5,6 +5,9 @@ const location = document.getElementById("location");
 const feelsLikeTemp = document.getElementById("feelsLikeTemp");
 const actualTemp = document.getElementById("actualTemp");
 const time = document.getElementById("time");
+const futureWeatherFeelsLikeTemp = document.getElementById(
+  "futureWeatherFeelsLikeTemp"
+);
 
 axios
   .get(
@@ -20,7 +23,13 @@ axios
 
       feelsLikeTemp.innerText = `Feels like: ${response.data.current.apparent_temperature} °C`;
       actualTemp.innerText = `Actual Temperature: ${response.data.current.temperature_2m} °C`;
-      console.log(response.data.current.temperature_2m);
+
+      console.log(response.data.daily);
+      // take each array and loop through each set of items
+      for (let i = 0; i < 28; i++) {
+        futureWeatherFeelsLikeTemp.innerText =
+          response.data.daily.apparent_temperature_max[i];
+      }
     },
     (error) => {
       console.log(error);

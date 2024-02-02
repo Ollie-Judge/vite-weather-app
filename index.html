@@ -14,7 +14,7 @@
     <title>Weather App</title>
   </head>
   <body>
-    <header id="header">
+    <div id="header">
       <i class="fa-solid fa-cloud"></i>
 
       <div id="locationContainer">
@@ -27,7 +27,18 @@
         <p id="feelsLikeTemp"></p>
         <p id="actualTemp"></p>
       </div>
-    </header>
+    </div>
+
+    <div id="futureWeatherContainer">
+      <div id="futureWeatherItem">
+        <i class="fa-solid fa-cloud"></i>
+
+        <div id="futureWeatherTempContainer">
+          <p id="futureWeatherFeelsLikeTemp"></p>
+          <p id="futureWeatherActualTemp"></p>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/script.js"></script>
   </body>
 </html>
