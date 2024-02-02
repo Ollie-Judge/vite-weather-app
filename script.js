@@ -29,11 +29,16 @@ axios
       for (let i = 0; i < 28; i++) {
         const hourlyWeatherItemContainer = document.createElement("div");
         hourlyWeatherItemContainer.id = "hourlyWeatherItemContainer";
+
         const apTempMax = document.createElement("p");
         apTempMax.innerText = `Feels like Max Temp: ${response.data.daily.apparent_temperature_max[i]}`;
+        hourlyWeatherItemContainer.appendChild(apTempMax);
+
+        const apTempMin = document.createElement("p");
+        apTempMin.innerText = `Feels like Min Temp: ${response.data.daily.apparent_temperature_min[i]}`;
+        hourlyWeatherItemContainer.appendChild(apTempMin);
 
         hourlyWeatherTempContainer.appendChild(hourlyWeatherItemContainer);
-        hourlyWeatherItemContainer.appendChild(apTempMax);
       }
     },
     (error) => {
