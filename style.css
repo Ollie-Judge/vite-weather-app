@@ -4,6 +4,6 @@
   text-align: center;
 }
 
-#hourlyWeatherItemContainer {
+.hourlyWeatherItemContainer {
   border: 1px solid black;
 }

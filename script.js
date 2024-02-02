@@ -28,7 +28,8 @@ axios
       // take each array and loop through each set of items
       for (let i = 0; i < 28; i++) {
         const hourlyWeatherItemContainer = document.createElement("div");
-        hourlyWeatherItemContainer.id = "hourlyWeatherItemContainer";
+        hourlyWeatherItemContainer.id = `hourlyWeatherItemContainer${i}`;
+        hourlyWeatherItemContainer.className = "hourlyWeatherItemContainer";
 
         const apTempMax = document.createElement("p");
         apTempMax.innerText = `Feels like Max Temp: ${response.data.daily.apparent_temperature_max[i]}`;
