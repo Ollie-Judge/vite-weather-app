@@ -5,8 +5,8 @@ const location = document.getElementById("location");
 const feelsLikeTemp = document.getElementById("feelsLikeTemp");
 const actualTemp = document.getElementById("actualTemp");
 const time = document.getElementById("time");
-const futureWeatherFeelsLikeTemp = document.getElementById(
-  "futureWeatherFeelsLikeTemp"
+const hourlyWeatherTempContainer = document.getElementById(
+  "hourlyWeatherTempContainer"
 );
 
 axios
@@ -27,8 +27,13 @@ axios
       console.log(response.data.daily);
       // take each array and loop through each set of items
       for (let i = 0; i < 28; i++) {
-        futureWeatherFeelsLikeTemp.innerText =
-          response.data.daily.apparent_temperature_max[i];
+        const hourlyWeatherItemContainer = document.createElement("div");
+        hourlyWeatherItemContainer.id = "hourlyWeatherItemContainer";
+        const apTempMax = document.createElement("p");
+        apTempMax.innerText = `Feels like Max Temp: ${response.data.daily.apparent_temperature_max[i]}`;
+
+        hourlyWeatherTempContainer.appendChild(hourlyWeatherItemContainer);
+        hourlyWeatherItemContainer.appendChild(apTempMax);
       }
     },
     (error) => {

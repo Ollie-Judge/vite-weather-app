@@ -3,3 +3,7 @@
   margin: 25px auto;
   text-align: center;
 }
+
+#hourlyWeatherItemContainer {
+  border: 1px solid black;
+}
